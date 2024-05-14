@@ -24,6 +24,7 @@ public:
         int getStudentAge() const;
         int getDaysToCompletion(int i) const;
         string getCurrentStudentDegree() const;
+        void print() const;
     // Mutators
         void setStudentID(string newStudentID);
         void setFirstName(string newFirstName);
@@ -32,8 +33,6 @@ public:
         void setStudentAge(int newStudentAge);
         void setDaysToCompletion(int x, int y, int z);
         void setCurrentStudentDegree(DegreeProgram newCurrentStudentDegree);
-    // Other
-        void print() const;
     // Constructor
         Student();
 };    
