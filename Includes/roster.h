@@ -5,10 +5,11 @@
 #include "student.h"
 using namespace std;
 
-    class Roster
+    class classRosterArrayNode
     {
 private:
-    const vector<Student*> classRosterArray;
+    Student* studentPtr = nullptr;
+    classRosterArrayNode* nextNode;
 public:
     // Accessors
         void printAll() const;
@@ -19,6 +20,8 @@ public:
         void add(string studentID, string firstName, string lastName, string emailAddress
         , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
         void remove(string studentID);
+    // Other
+        classRosterArrayNode* getNextNode() const;
     };    
 
 #endif

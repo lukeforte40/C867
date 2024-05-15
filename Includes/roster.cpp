@@ -1,27 +1,34 @@
 #include <string>
 #include <vector>
 #include "degree.h"
+#include "student.h"
 #include "roster.h"
 using namespace std;
 
+// Class roster linked list setup
+
 // Accessors
-    void Roster::printAll() const {
+    void classRosterArrayNode::printAll() const {
         // FIX ME
     };
-    void Roster::printAverageDaysInCourse(string studentID) const {
+    void classRosterArrayNode::printAverageDaysInCourse(string studentID) const {
         // FIX ME
     };
-    void Roster::printInvalidEmails() const {
+    void classRosterArrayNode::printInvalidEmails() const {
         // FIX ME
     };
-    void Roster::printByDegreeProgram(DegreeProgram DegreeProgram) const {
+    void classRosterArrayNode::printByDegreeProgram(DegreeProgram DegreeProgram) const {
         // FIX ME
     };
 //Mutators
-    void Roster::add(string studentID, string firstName, string lastName, string emailAddress
+    void classRosterArrayNode::add(string studentID, string firstName, string lastName, string emailAddress
     , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
+       // FIX ME
+    };
+    void classRosterArrayNode::remove(string studentID){
         // FIX ME
     };
-    void Roster::remove(string studentID){
-        // FIX ME
+// Other
+    classRosterArrayNode* classRosterArrayNode::getNextNode() const{
+        return nextNode;
     };
