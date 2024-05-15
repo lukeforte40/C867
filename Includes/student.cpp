@@ -81,8 +81,17 @@ using namespace std;
         cout << endl;
     };
 // Constructor
-    Student::Student(string cstudentID = "--", string cfirstName = "noName", string clastName = "noName", string cstudentEmail = "noEmail", int cstudentAge = -1 
-        , int cdaysToCompletion1 = -1, int cdaysToCompletion2 = -1, int cdaysToCompletion3 = -1, DegreeProgram ccurrentDegree = SOFTWARE){
+    Student::Student(){
+            studentID = "--";
+            firstName = "None";
+            lastName = "None";
+            studentEmail = "Not set";
+            studentAge = -1;
+            daysToCompletion = {-1,-1,-1};
+            currentStudentDegree = SOFTWARE;
+    };    
+    Student::Student(string cstudentID, string cfirstName, string clastName, string cstudentEmail, int cstudentAge
+        , int cdaysToCompletion1, int cdaysToCompletion2, int cdaysToCompletion3, DegreeProgram ccurrentDegree){
         this->studentID = cstudentID;
         this->firstName = cfirstName;
         this->lastName = clastName;
@@ -90,4 +99,4 @@ using namespace std;
         this->studentAge = cstudentAge;
         this->daysToCompletion = {cdaysToCompletion1, cdaysToCompletion2, cdaysToCompletion3};
         this->currentStudentDegree = ccurrentDegree;
-};
+    };
