@@ -81,12 +81,13 @@ using namespace std;
         cout << endl;
     };
 // Constructor
-    Student::Student(){
-        studentID = "--";
-        firstName = "None";
-        lastName = "None";
-        studentEmail = "Not set";
-        studentAge = -1;
-        daysToCompletion = {-1,-1,-1};
-        currentStudentDegree = SOFTWARE;
+    Student::Student(string cstudentID = "--", string cfirstName = "noName", string clastName = "noName", string cstudentEmail = "noEmail", int cstudentAge = -1 
+        , int cdaysToCompletion1 = -1, int cdaysToCompletion2 = -1, int cdaysToCompletion3 = -1, DegreeProgram ccurrentDegree = SOFTWARE){
+        this->studentID = cstudentID;
+        this->firstName = cfirstName;
+        this->lastName = clastName;
+        this->studentEmail = cstudentEmail;
+        this->studentAge = cstudentAge;
+        this->daysToCompletion = {cdaysToCompletion1, cdaysToCompletion2, cdaysToCompletion3};
+        this->currentStudentDegree = ccurrentDegree;
 };

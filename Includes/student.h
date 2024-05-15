@@ -34,6 +34,7 @@ public:
         void setDaysToCompletion(int x, int y, int z);
         void setCurrentStudentDegree(DegreeProgram newCurrentStudentDegree);
     // Constructor
-        Student();
+        Student(string cstudentID, string cfirstName, string clastName, string cstudentEmail, int cstudentAge 
+        , int cdaysToCompletion1, int cdaysToCompletion2, int cdaysToCompletion3, DegreeProgram ccurrentDegree);
 };    
 #endif
