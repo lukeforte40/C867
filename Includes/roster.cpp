@@ -8,27 +8,47 @@ using namespace std;
 // Class roster linked list setup
 
 // Accessors
-    void classRosterArrayNode::printAll() const {
+    void classRosterArray::printAll() const {
         // FIX ME
     };
-    void classRosterArrayNode::printAverageDaysInCourse(string studentID) const {
+    void classRosterArray::printAverageDaysInCourse(string studentID) const {
         // FIX ME
     };
-    void classRosterArrayNode::printInvalidEmails() const {
+    void classRosterArray::printInvalidEmails() const {
         // FIX ME
     };
-    void classRosterArrayNode::printByDegreeProgram(DegreeProgram DegreeProgram) const {
+    void classRosterArray::printByDegreeProgram(DegreeProgram DegreeProgram) const {
         // FIX ME
     };
 //Mutators
-    void classRosterArrayNode::add(string studentID, string firstName, string lastName, string emailAddress
+    void classRosterArray::add(string studentID, string firstName, string lastName, string emailAddress
     , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
-       // FIX ME
+        // Making the student object and linking a pointer to it
+            this->studentPtr = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
+        // 
+
+        // Deleting the student pointer
+            delete studentPtr;
     };
-    void classRosterArrayNode::remove(string studentID){
+    void classRosterArray::remove(string studentID){
         // FIX ME
     };
 // Other
-    classRosterArrayNode* classRosterArrayNode::getNextNode() const{
+    classRosterArray* classRosterArray::getNextNode() const{
         return nextNode;
+    };
+// Constructor
+    classRosterArray::classRosterArray(string studentID, string firstName, string lastName, string emailAddress
+        , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
+        this->studentPtr = new Student(studentID, firstName, lastName, emailAddress
+        , age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
+        this->nextNode = nullptr;
+    };
+// Destructor
+    classRosterArray::~classRosterArray(){
+        delete this-> studentPtr;
+        while (this->nextNode != nullptr){
+            this->getNextNode();
+            delete this-> studentPtr;
+        }
     };

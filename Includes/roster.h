@@ -5,11 +5,11 @@
 #include "student.h"
 using namespace std;
 
-    class classRosterArrayNode
+    class classRosterArray
     {
 private:
     Student* studentPtr = nullptr;
-    classRosterArrayNode* nextNode;
+    classRosterArray* nextNode;
 public:
     // Accessors
         void printAll() const;
@@ -21,7 +21,12 @@ public:
         , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
         void remove(string studentID);
     // Other
-        classRosterArrayNode* getNextNode() const;
+        classRosterArray* getNextNode() const;
+    // Constructor
+        classRosterArray(string studentID, string firstName, string lastName, string emailAddress
+        , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+    // Destructor
+        ~classRosterArray();
     };    
 
 #endif
