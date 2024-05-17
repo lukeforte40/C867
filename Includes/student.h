@@ -23,7 +23,7 @@ public:
         string getStudentEmail() const;
         int getStudentAge() const;
         int getDaysToCompletion(int i) const;
-        DegreeProgram getCurrentStudentDegree() const;
+        string getCurrentStudentDegree() const;
         void print() const;
     // Mutators
         void setStudentID(string newStudentID);

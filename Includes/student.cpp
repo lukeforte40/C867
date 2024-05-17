@@ -22,16 +22,16 @@ using namespace std;
     int Student::getDaysToCompletion(int i) const {
         return daysToCompletion[i];
     }    
-    DegreeProgram Student::getCurrentStudentDegree() const {
+    string Student::getCurrentStudentDegree() const {
         switch (currentStudentDegree)
         {
         case 0:
-            return NETWORK;
+            return "Network";
         
         case 1:
-            return SECURIRTY;
+            return "Securtiy";
         case 2:
-            return SOFTWARE;
+            return "Software";
         default:
             break;
         };
