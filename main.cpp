@@ -11,8 +11,11 @@ int main(){
         // Add student objects
         classRoster->printAll();
         // classRoster->printInvalidEmails();
-        // loop through classRosterArray and for each element:
-        //classRoster.printAverageDaysInCourse(/*current_object's student id*/);
+        vector<Student*> tempArray = classRoster->getClassRosterArray(); 
+        for (int i = 0; i < tempArray.size(); i++)
+        {
+            classRoster->printAverageDaysInCourse(tempArray.at(i)->getStudentID());
+        }
         classRoster->printByDegreeProgram(SOFTWARE);
         classRoster->remove("A3");
         classRoster->printAll();
