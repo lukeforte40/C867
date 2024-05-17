@@ -12,6 +12,7 @@ private:
     vector<Student*> classRosterArray;
 public:
     // Accessors
+        vector<Student*> getClassRosterArray() const;
         void printAll() const;
         void printAverageDaysInCourse(string studentID) const;
         void printInvalidEmails() const;

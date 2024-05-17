@@ -8,6 +8,9 @@ using namespace std;
 
 
 // Accessors
+    vector<Student*> Roster::getClassRosterArray() const {
+        return this->classRosterArray;
+    };
     void Roster::printAll() const {
         if (classRosterArray.size() == 0)
         {
