@@ -82,7 +82,7 @@ using namespace std;
             {
                 if (0 == atCount || 0 == periodCount)
                 {
-                    cout << "Student Id: " << this->classRosterArray.at(i)->getStudentID() << " " << studentEmail << endl;
+                    cout << "Student Id: " << this->classRosterArray.at(i)->getStudentID() << " | Student Email: " << studentEmail << endl;
                 }
             } 
         }
