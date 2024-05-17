@@ -33,6 +33,7 @@ using namespace std;
         case 2:
             return "Software";
         default:
+            return "None";
             break;
         };
     }

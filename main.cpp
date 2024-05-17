@@ -18,8 +18,8 @@ int main(){
         classRoster->printAll();
         classRoster->remove("A3");
         // Testing
+            cout << "Testing:" << endl;
             classRoster->add("A1", "Luke", "Forte", "test@email.com", 25, 10, 30, 15, SOFTWARE);
-            classRoster->printByDegreeProgram(SOFTWARE);
         delete classRoster;
         return 0;
 };

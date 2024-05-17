@@ -44,22 +44,35 @@ using namespace std;
         // FIX ME
     };
     void Roster::printByDegreeProgram(DegreeProgram DegreeProgram) const {
+        if (0 == this->classRosterArray.size())
+        {
+            cout << "This roster shows no students in this program." << endl;
+        }
+        
         for (int i = 0; i < this->classRosterArray.size(); i++)
         {
             Student* studentPtr = classRosterArray.at(i);
-            int counter = 0;
-            if (DegreeProgram == studentPtr->getCurrentStudentDegree())
+            switch (DegreeProgram)
             {
-                studentPtr->print();
-                counter++;
-            }
-            if (counter == 0)
-            {
-                cout << "No students found in this program." << endl; 
-            }
-            
+            case 0:
+                if ("Network" == studentPtr->getCurrentStudentDegree())
+                {
+                    studentPtr->print();
+                }            
+            case 1:
+                if ("Securtiy" == studentPtr->getCurrentStudentDegree())
+                {
+                    studentPtr->print();
+                }
+            case 2:
+                if ("Software" == studentPtr->getCurrentStudentDegree())
+                {
+                    studentPtr->print();
+                }
+            default:   
+                break;
+            };
         }
-
     };
 //Mutators
     void Roster::add(string studentID, string firstName, string lastName, string emailAddress
