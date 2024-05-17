@@ -44,7 +44,48 @@ using namespace std;
         }
     };
     void Roster::printInvalidEmails() const {
-        // FIX ME
+        cout << "Invalid Emails: " << endl;
+        int atCount = 0;
+        int periodCount = 0;
+        vector<string> invalidEmails;
+        if (0 == this->classRosterArray.size())
+        {
+            cout << "No emails to check." << endl;
+        }
+        for (int i = 0; i < this->classRosterArray.size(); i++)
+        {
+            int spaceCount = 0;
+            Student* tempStudent = this->classRosterArray.at(i);
+            string studentEmail = tempStudent->getStudentEmail();
+            for ( char& c : studentEmail)
+            {
+                switch (c)
+                {
+                case '@':
+                    atCount++;
+                    break;
+                case ' ':
+                    spaceCount++;
+                    break;
+                case '.':
+                    periodCount++;
+                    break;
+                default:
+                    break;
+                } 
+            }
+            if (0 < spaceCount)
+            {
+                cout << "Student Id: " << this->classRosterArray.at(i)->getStudentID() << " | Student Email: " << studentEmail << endl;
+            }
+            else
+            {
+                if (0 == atCount || 0 == periodCount)
+                {
+                    cout << "Student Id: " << this->classRosterArray.at(i)->getStudentID() << " " << studentEmail << endl;
+                }
+            } 
+        }
     };
     void Roster::printByDegreeProgram(DegreeProgram DegreeProgram) const {
         if (0 == this->classRosterArray.size())

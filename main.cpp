@@ -10,7 +10,7 @@ int main(){
         Roster* classRoster = new Roster;
         // Add student objects
         classRoster->printAll();
-        // classRoster->printInvalidEmails();
+        classRoster->printInvalidEmails();
         vector<Student*> tempArray = classRoster->getClassRosterArray(); 
         for (int i = 0; i < tempArray.size(); i++)
         {
