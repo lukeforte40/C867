@@ -24,7 +24,21 @@ using namespace std;
         }
     };
     void Roster::printAverageDaysInCourse(string studentID) const {
-        // FIX ME
+        cout << "Average days until Completion for ";
+        for (int i = 0; i < this->classRosterArray.size(); i++)
+        {
+            Student* studentPtr = classRosterArray.at(i);
+            if (studentID == studentPtr->getStudentID())
+            {
+                cout << studentPtr->getFirstName() << " " << studentPtr->getLastName() << ": ";
+                int totDays = 0;
+                for (int d = 0; d < 3; d++)
+                {
+                    totDays += studentPtr->getDaysToCompletion(d);
+                }
+                cout << totDays/3 << endl;
+            }
+        }
     };
     void Roster::printInvalidEmails() const {
         // FIX ME
