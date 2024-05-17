@@ -44,7 +44,22 @@ using namespace std;
         // FIX ME
     };
     void Roster::printByDegreeProgram(DegreeProgram DegreeProgram) const {
-        // FIX ME
+        for (int i = 0; i < this->classRosterArray.size(); i++)
+        {
+            Student* studentPtr = classRosterArray.at(i);
+            int counter = 0;
+            if (DegreeProgram == studentPtr->getCurrentStudentDegree())
+            {
+                studentPtr->print();
+                counter++;
+            }
+            if (counter == 0)
+            {
+                cout << "No students found in this program." << endl; 
+            }
+            
+        }
+
     };
 //Mutators
     void Roster::add(string studentID, string firstName, string lastName, string emailAddress
@@ -53,12 +68,22 @@ using namespace std;
         classRosterArray.push_back(studentPtr);
     };
     void Roster::remove(string studentID){
-        // FIX ME
+        string output = "A student with this ID was not found";
+        for (int i = 0; i < this->classRosterArray.size(); i++)
+        {
+            Student* studentPtr = classRosterArray.at(i);
+            if (studentID == studentPtr->getStudentID())
+            {
+                classRosterArray.erase(classRosterArray.begin() + i);
+                output = "Success!";
+            }
+        }
+        cout << output << endl;
     };
 // Constructor
     Roster::Roster(){
         // FIX ME
-    };
+    }
 // Destructor
     Roster::~Roster(){
         for (int i = 0; i < classRosterArray.size(); i++)
