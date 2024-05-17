@@ -11,7 +11,7 @@ int main(){
     classRoster->add("A2", "Suzan", "Erickson", "Erickson_1990@gmailcom" ,19,50,30,40,NETWORK);
     classRoster->add("A3", "Jack", "Napoli", "The_lawyer99yahoo.com",19,20,40,33,SOFTWARE);
     classRoster->add("A4", "Erin", "Black", "Erin.black@comcast.net",22,50,58,40,SECURITY);
-    classRoster->add("A5", "Luke", "Forte", "test@emailcom", 25, 10, 30, 15, SOFTWARE);
+    classRoster->add("A5", "Luke", "Forte", "lfort11@wgu.edu", 25, 10, 30, 15, SOFTWARE);
     classRoster->printAll();
     classRoster->printInvalidEmails();
     vector<Student*> tempArray = classRoster->getClassRosterArray(); 
