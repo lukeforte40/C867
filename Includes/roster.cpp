@@ -9,12 +9,18 @@ using namespace std;
 
 // Accessors
     void Roster::printAll() const {
-        for (int i = 0; i < this->classRosterArray.size(); i++)
+        if (classRosterArray.size() == 0)
         {
-            // FIX ME
-            // Student* studentPtr = classRosterArray.at(i);
-            // string studentId = studentPtr->getStudentID();
-            // cout << studentPtr << endl;
+            cout << "No students in the roster." << endl;
+        }
+        else
+        {
+            for (int i = 0; i < this->classRosterArray.size(); i++)
+            {
+                Student* studentPtr = classRosterArray.at(i);
+                studentPtr->print();
+            }
+
         }
     };
     void Roster::printAverageDaysInCourse(string studentID) const {
@@ -31,7 +37,6 @@ using namespace std;
     , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
         Student* studentPtr = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
         classRosterArray.push_back(studentPtr);
-        delete studentPtr;
     };
     void Roster::remove(string studentID){
         // FIX ME
@@ -42,5 +47,8 @@ using namespace std;
     };
 // Destructor
     Roster::~Roster(){
-        // FIX ME
+        for (int i = 0; i < classRosterArray.size(); i++)
+        {
+            delete classRosterArray.at(i);
+        }
     };
