@@ -5,12 +5,14 @@
 #include "student.h"
 using namespace std;
 
-    class roster
+
+    class Roster
     {
 private:
-    const vector<Student> studentRoster;
+    vector<Student*> classRosterArray;
 public:
     // Accessors
+        vector<Student*> getClassRosterArray() const;
         void printAll() const;
         void printAverageDaysInCourse(string studentID) const;
         void printInvalidEmails() const;
@@ -19,10 +21,10 @@ public:
         void add(string studentID, string firstName, string lastName, string emailAddress
         , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
         void remove(string studentID);
-    // Constructor 
-        roster();
+    // Constructor
+        Roster();
     // Destructor
-        ~roster();
+        ~Roster();
     };    
 
 #endif

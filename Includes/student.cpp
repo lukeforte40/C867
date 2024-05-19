@@ -27,15 +27,13 @@ using namespace std;
         {
         case 0:
             return "Network";
-            break;
         
         case 1:
-            return "Security";
-            break;
+            return "Securtiy";
         case 2:
             return "Software";
         default:
-            return "Unknown";
+            return "None";
             break;
         };
     }
@@ -82,11 +80,21 @@ using namespace std;
     };
 // Constructor
     Student::Student(){
-        studentID = "--";
-        firstName = "None";
-        lastName = "None";
-        studentEmail = "Not set";
-        studentAge = -1;
-        daysToCompletion = {-1,-1,-1};
-        currentStudentDegree = SOFTWARE;
-};
+            studentID = "--";
+            firstName = "None";
+            lastName = "None";
+            studentEmail = "Not set";
+            studentAge = -1;
+            daysToCompletion = {-1,-1,-1};
+            currentStudentDegree = SOFTWARE;
+    };    
+    Student::Student(string cstudentID, string cfirstName, string clastName, string cstudentEmail, int cstudentAge
+        , int cdaysToCompletion1, int cdaysToCompletion2, int cdaysToCompletion3, DegreeProgram ccurrentDegree){
+        this->studentID = cstudentID;
+        this->firstName = cfirstName;
+        this->lastName = clastName;
+        this->studentEmail = cstudentEmail;
+        this->studentAge = cstudentAge;
+        this->daysToCompletion = {cdaysToCompletion1, cdaysToCompletion2, cdaysToCompletion3};
+        this->currentStudentDegree = ccurrentDegree;
+    };
