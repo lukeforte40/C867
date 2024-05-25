@@ -14,15 +14,19 @@ int main(){
     classRoster->add("A5", "Luke", "Forte", "lfort11@wgu.edu", 25, 10, 30, 15, SOFTWARE);
     classRoster->printAll();
     classRoster->printInvalidEmails();
-    vector<Student*> tempArray = classRoster->getClassRosterArray(); 
-    for (int i = 0; i < tempArray.size(); i++)
+    Student** tempArray = classRoster->getClassRosterArray(); 
+    for (int i = 0; i < classRoster->classRosterArraySize; i++)
     {
-        classRoster->printAverageDaysInCourse(tempArray.at(i)->getStudentID());
+        if (tempArray[i] != nullptr)
+        {
+            classRoster->printAverageDaysInCourse(tempArray[i]->getStudentID());
+        }
     }
     classRoster->printByDegreeProgram(SOFTWARE);
     classRoster->remove("A3");
     classRoster->printAll();
     classRoster->remove("A3");
+
     delete classRoster;
     return 0;
 };
