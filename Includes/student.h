@@ -2,7 +2,6 @@
 #define student_h
 
 #include <string>
-#include <vector>
 #include "degree.h"
 using namespace std;
 
@@ -14,7 +13,7 @@ private:
     string studentEmail; 
     int studentAge;
     DegreeProgram currentStudentDegree;
-    vector<int> daysToCompletion{-1,-1,-1};
+    int daysToCompletion[3] = {-1,-1,-1};
 public:
     // Accessor
         string getStudentID() const;

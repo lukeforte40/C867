@@ -1,7 +1,6 @@
 #ifndef roster_h
 #define roster_h
  
-#include <vector>
 #include "student.h"
 using namespace std;
 
@@ -9,17 +8,19 @@ using namespace std;
     class Roster
     {
 private:
-    vector<Student*> classRosterArray;
+    Student* classRosterArray[5] = {nullptr, nullptr, nullptr, nullptr, nullptr};
 public:
+    // Variables
+        int classRosterArrayIndex = 0;
+        int classRosterArraySize = 0;
     // Accessors
-        vector<Student*> getClassRosterArray() const;
+        Student** getClassRosterArray();
         void printAll() const;
         void printAverageDaysInCourse(string studentID) const;
         void printInvalidEmails() const;
         void printByDegreeProgram(DegreeProgram DegreeProgram) const;
     // Mutators
-        void add(string studentID, string firstName, string lastName, string emailAddress
-        , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+         void add(const string StudentData[]);
         void remove(string studentID);
     // Constructor
         Roster();
