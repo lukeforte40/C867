@@ -20,8 +20,7 @@ public:
         void printInvalidEmails() const;
         void printByDegreeProgram(DegreeProgram DegreeProgram) const;
     // Mutators
-         void add(string studentID, string firstName, string lastName, string emailAddress
-         , int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+         void add(const string StudentData[]);
         void remove(string studentID);
     // Constructor
         Roster();
